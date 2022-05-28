@@ -1,4 +1,4 @@
-import { IBook } from "../../types/types";
+import { IBook } from "../../types";
 import { StyledBookItem } from "./styles";
 
 interface IBookItemProps {
@@ -7,12 +7,12 @@ interface IBookItemProps {
 
 export const BookItem = ({ book }: IBookItemProps) => {
   return (
-    <StyledBookItem>
+    <StyledBookItem whileHover={{ y: 10 }}>
       <img src={book.image} alt={book.title} />
-      <h2> {book.title} </h2>
+      <h2>{book.title}</h2>
       <p>{book.isbn13}</p>
-      <p> {book.subtitle} </p>
-      <p>{book.price} </p>
+      <p> {book.subtitle}</p>
+      <p>{book.price}</p>
     </StyledBookItem>
   );
 };
