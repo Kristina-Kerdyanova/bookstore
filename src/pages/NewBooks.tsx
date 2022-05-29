@@ -1,37 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { bookApi } from "../services/bookService";
-import { INewBooksApi } from "../types";
+import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
+import { getNewBooks } from "../store/selectors/booksSelector";
+import { addBuy } from "../store/slices/cartReducer";
+import { addFavorite } from "../store/slices/favoriteReducer";
+import { IBook } from "../types";
 
 export const NewBooks = () => {
-  const [newBooks, setNewBooks] = useState<INewBooksApi>({
-    books: [],
-    error: "",
-    total: "",
-  });
+  const books = useAppSelector(getNewBooks);
+  const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    bookApi.getNewBooks().then((books) => {
-      setNewBooks(books);
-    });
-  }, []);
+  const handleFavorite = (book: IBook) => {
+    dispatch(addFavorite(book));
+  };
+
+  const handleAddBuy = (book: IBook) => {
+    dispatch(addBuy(book));
+  };
   return (
     <div>
-      <h1>New Books</h1>
-      <h2>Error: {newBooks.error} </h2>
-      <h2>Total new Books: {newBooks.total} </h2>
+      <h1>NewBooks</h1>
       <ul>
-        {newBooks.books.map(book => {
-          return <li key={book.isbn13}>
-            <Link to={`/books/${book.isbn13}`}>
-            <h1>{book.title}</h1>
-            <p>{book.subtitle}</p>
+        {books.map(book => (
+          <li key={book.isbn13}>
+            <img src={book.image} alt={book.title} />
+            <h2>{book.title}</h2>
+            <p> {book.subtitle}</p>
             <p>{book.price}</p>
-            </Link>
-            </li>
-        })}
+            <button
+              onClick={() => handleFavorite(book)}
+            >
+              ❤
+            </button>
+
+            <button
+              onClick={() => handleAddBuy(book)}
+            >
+              🛒
+            </button>
+          </li>
+        ))}
       </ul>
-    
     </div>
-    )
+  );
 };
