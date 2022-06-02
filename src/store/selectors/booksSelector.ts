@@ -1,6 +1,5 @@
 import { RootState } from "../store";
 
-export const getNewBooks = (state: RootState) => state.newBooks;
-// export const getSearch = (state: RootState) => state.Search;
-// export const getdetailBooks = (state: RootState) => state.detailBooks;
-
+export const getNewBooks = (state: RootState) => state.newBooks.books;
+export const getNewBooksStatus = (state:RootState) => state.newBooks.status;
+export const getNewBooksError = (state:RootState) => state.newBooks.error;
