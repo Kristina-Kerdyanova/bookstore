@@ -2,12 +2,14 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 export const SearchBooks = () => {
+
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
-    navigate(`search/${data.title}/1`);
+    navigate(`/search/${data.title}/1`);
   }
+
   return (
     <div>
       <h1>SearchBooks</h1>

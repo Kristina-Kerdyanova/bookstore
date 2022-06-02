@@ -5,6 +5,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { setUser } from '../store/slices/userReducer';
 
+
 export const Register = () => {
     const navigate = useNavigate();
     const dispath = useDispatch();
@@ -15,9 +16,9 @@ export const Register = () => {
         const auth = getAuth();
 
         createUserWithEmailAndPassword(auth, data.email, data.password)
-            .then((userCredential) => {
+            .then((userCredential: any) => {
                 dispath(setUser(userCredential.user.email));
-                navigate(routers.ACCOUNT);
+                navigate(routers.SIGN_UP);
             })
             .catch(console.error);
     };
@@ -34,4 +35,5 @@ export const Register = () => {
             <Link to={routers.SIGN_IN}>Have account</Link>
         </div>
     );
-};
+}
+
