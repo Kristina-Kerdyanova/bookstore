@@ -20,7 +20,7 @@ export const Cart = () => {
             <p>{buy.length}</p>
         </header>
             <ul>
-                {buy.map(book => (
+                {buy.map((book: IBook) => (
                     <li key={book.isbn13}>
                         <img src={book.image} alt={book.title} />
                         <h2>{book.title}</h2>
