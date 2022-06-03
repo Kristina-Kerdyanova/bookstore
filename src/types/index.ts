@@ -1,3 +1,10 @@
+export interface INewBooks {
+  total: string;
+  books: IBook[];
+  error: any;
+  status: RequestStatusType;
+}
+
 export interface IBook {
   title: string;
   subtitle: string;
@@ -5,13 +12,18 @@ export interface IBook {
   price: string;
   image: string;
   url: string;
-}
+};
 
-export interface INewBooksApi {
-  books: IBook[];
-  error: string;
-  total: string;
-}
+export interface IFavorite {
+  sortMode: string;
+  favorites: IBook[];
+};
+
+export interface ICart {
+  buy: IBook[];
+};
+
+export type RequestStatusType = "idle" | "loading" | "success" | "error";
 
 export interface IBookDetailsApi {
   authors: string;
@@ -34,6 +46,6 @@ export interface IBookDetailsApi {
   year: string;
 }
 
-export interface ISearchBooksApi extends INewBooksApi {
+export interface ISearchBooksApi extends INewBooks {
   page: string;
 }
