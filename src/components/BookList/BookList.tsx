@@ -1,8 +1,9 @@
-import { IBook } from "../../types";
 import { BookItem } from "../BookItem/BookItem";
 import { StyledBookList } from "./styles";
 
 import { useEffect, useState } from "react";
+import { IBook } from "../../types";
+
 
 export const App = () => {
   const [books, setBooks] = useState<IBook[]>([]);
