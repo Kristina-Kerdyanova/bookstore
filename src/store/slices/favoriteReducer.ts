@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IBook, IFavorite } from "./types";
+import { IBook, IFavorite } from "../../types";
+
 
 const initialState: IFavorite = {
   sortMode: "asc",

@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IBook, ICart } from "./types";
+import { IBook, ICart } from "../../types";
+
 
 const initialState: ICart = {
   buy: [],
