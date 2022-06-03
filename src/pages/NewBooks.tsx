@@ -5,7 +5,8 @@ import { getNewBooks, getNewBooksError, getNewBooksStatus } from "../store/selec
 import { addBuy } from "../store/slices/cartReducer";
 import { addFavorite } from "../store/slices/favoriteReducer";
 import { fetchNewBooks } from "../store/slices/newBooksReducer";
-import { IBook } from "../store/types";
+import { IBook } from "../types";
+
 
 
 export const NewBooks = () => {

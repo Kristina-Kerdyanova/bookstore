@@ -78,7 +78,8 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { bookApi } from '../services/bookService';
-import { ISearchBooksApi } from '../store/types';
+import { ISearchBooksApi } from '../types';
+
 
 
 export const SearchBooksResults = () => {
