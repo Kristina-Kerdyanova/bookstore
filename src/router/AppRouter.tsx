@@ -31,7 +31,7 @@ export const AppRouter = () => {
       </Route>
 
       <Route path={routers.ACCOUNT} element={<Account />} />
-      <Route path={routers.SIGN_IN} element={<Login />} />
+      {/* <Route path={routers.SIGN_IN} element={<Login />} /> */}
       <Route path={routers.SIGN_UP} element={<Register />} />
       {/* <Route path={routers.NOT_FOUND} element={<NotFound />} /> */}
 
