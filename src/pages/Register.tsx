@@ -16,11 +16,13 @@ export const Register = () => {
         const auth = getAuth();
 
         createUserWithEmailAndPassword(auth, data.email, data.password)
-            .then((userCredential: any) => {
+            .then((userCredential) => {
                 dispath(setUser(userCredential.user.email));
-                navigate(routers.SIGN_UP);
+                navigate(routers.SIGN_IN);
             })
             .catch(console.error);
+        navigate(routers.SIGN_IN);
+
     };
 
 
