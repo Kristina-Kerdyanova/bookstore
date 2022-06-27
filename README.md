@@ -1,6 +1,6 @@
 # **Bookstore**
 
-[Live Demo]
+[Live Demo] (https://kristina-kerdyanova.github.io/bookstore/)
 
 ## Tools and Pachages
 
