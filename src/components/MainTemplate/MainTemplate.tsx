@@ -1,34 +1,21 @@
-import { Link, Outlet } from 'react-router-dom'
-import styled from 'styled-components';
+import { Outlet } from 'react-router-dom'
+import { Footer } from '../Footer/Footer';
+import { Header } from '../Header/Header';
+import { StyledMainTemplate, Container } from './styles';
 
 export const MainTemplate = () => {
     return (
-        <div>
-            <nav>
-                <StyledLink to={'/'}>
-                    New Books
-                </StyledLink>
-                <StyledLink to={'/search'}>
-                    Search
-                </StyledLink>
-                <StyledLink to={'/favorite'}>
-                    Favorite
-                </StyledLink>
-                <StyledLink to={'/cart'}>
-                    Cart
-                </StyledLink>
-                <StyledLink to={'/account'}>
-                    Account
-                </StyledLink>
+        <StyledMainTemplate>
+            <Container>
+                <Header />
                 <Outlet />
-            </nav>
-        </div>
-    )
-}
+                <Footer />
+            </Container>
+        </StyledMainTemplate>
+    );
+};
 
-const StyledLink = styled(Link)`
-margin: 5px;
-`;
+
 
 
 

@@ -1,40 +1,40 @@
 import { BookItem } from "../BookItem/BookItem";
 import { StyledBookList } from "./styles";
 
-import { useEffect, useState } from "react";
 import { IBook } from "../../types";
+import { getNewBooks, getNewBooksError, getNewBooksStatus } from "../../store/selectors/booksSelector";
+import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
+import { useEffect } from "react";
+import { fetchNewBooks } from "../../store/slices/newBooksReducer";
 
+export const BookList = () => {
+  const books = useAppSelector(getNewBooks);
+  const status = useAppSelector(getNewBooksStatus);
+  const error = useAppSelector(getNewBooksError);
 
-export const App = () => {
-  const [books, setBooks] = useState<IBook[]>([]);
-
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    fetch("https://api.itbook.store/1.0/new")
-      .then((res) => res.json())
-      .then((data) => {
-        setBooks(data.books);
-      });
-  }, []);
+    if (status === "idle") {
+      dispatch(fetchNewBooks());
+    }
+  }, [dispatch, status]);
 
-  return (
-    <div>
-      <h1>Books</h1>
-      <BookList books={books} />
+  if (status === 'loading') {
+    return <div>Loading...</div>
+  };
+
+  if (status === 'error') {
+    return <div>
+      <h1>WE HAVE SOME PROBLEMS</h1>
+      <h2>{error.message}</h2>
+      <i>{error.code}</i>
     </div>
-  );
-
-};
-
-interface IBookListProps {
-  books: IBook[];
-}
-
-export const BookList = ({ books }: IBookListProps) => {
+  };
   return (
     <StyledBookList>
-      {books.map((book) => {
+      {books.map((book: IBook) => {
         return <BookItem key={book.isbn13} book={book} />;
       })}
     </StyledBookList>
-  )
+  );
 };
