@@ -12,16 +12,17 @@ export interface IBook {
   price: string;
   image: string;
   url: string;
-};
+}
 
 export interface IFavorite {
-  sortMode: string;
   favorites: IBook[];
-};
+}
 
 export interface ICart {
-  buy: IBook[];
-};
+  book: IBook[];
+  total: number;
+  isLoading: boolean;
+}
 
 export type RequestStatusType = "idle" | "loading" | "success" | "error";
 
@@ -46,6 +47,26 @@ export interface IBookDetailsApi {
   year: string;
 }
 
+export interface IBookDetails {
+  error: any;
+  status: RequestStatusType;
+  details: IBookDetailsApi;
+}
+
 export interface ISearchBooksApi extends INewBooks {
   page: string;
 }
+
+export interface IBookList {
+  list: IBook[];
+}
+
+export interface IArguments {
+  title: string;
+  page: string;
+}
+
+export interface ICartItem extends IBookDetailsApi {
+  amount: number;
+}
+
