@@ -1,36 +1,46 @@
-import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { bookApi } from '../services/bookService';
-import { IBookDetailsApi } from '../types';
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { ButtonBack } from "../components/ButtonBack/ButtonBack";
+import { DetailsItem } from "../components/DetailsItem/DetailsItem";
+import { Subscribe } from "../components/Subscribe/Subscribe";
+import { useAppSelector, useAppDispatch } from "../store/hooks/hooks";
+import { getNewBooksError } from "../store/selectors/booksSelector";
+import { getBookDetailsStatus } from "../store/selectors/detailsBookSelector";
+import { fetchDetailsBook } from "../store/slices/detailsBookReducer";
+import { StyledApp } from "../styles";
+
 
 export const DetailsBook = () => {
+  const status = useAppSelector(getBookDetailsStatus);
+  const error = useAppSelector(getNewBooksError);
 
-    const { id = "" } = useParams();
-    const [detailsBook, setDetailsBook] = useState<IBookDetailsApi>();
-    const navigate = useNavigate();
+  const { id = "" } = useParams();
 
-    const handleBack = () => {
-        navigate(-1);
-    };
+  const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        bookApi.getBookDetails(id).then(book => {
-            setDetailsBook(book);
-        })
-    }, [id]);
+  useEffect(() => {
+    dispatch(fetchDetailsBook(id));
+  }, [dispatch, id]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "error") {
     return (
-        <div>
-            <button
-                type='button'
-                onClick={handleBack}
-            >
-                Back
-            </button>
-            <h1>{detailsBook?.title ? detailsBook.title : "No Title"}</h1>
-            <h1>{detailsBook?.subtitle}</h1>
-            <p>{detailsBook?.price}</p>
-            <p>{detailsBook?.desc}</p>
-            <p>{detailsBook?.rating}</p>
-        </div>
-    )
-}
+      <div>
+        <h1>WE HAVE SOME PROBLEMS</h1>
+        <h2>{error.message}</h2>
+        <i>{error.code}</i>
+      </div>
+    );
+  }
+
+  return (
+    <StyledApp>
+      <ButtonBack />
+      <DetailsItem/>
+      <Subscribe/>
+    </StyledApp>
+  );
+};
