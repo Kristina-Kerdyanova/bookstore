@@ -8,10 +8,10 @@ import { Favorite } from "../pages/Favorite";
 import { Login } from "../pages/Login";
 
 import { NewBooks } from "../pages/NewBooks";
-import { Register } from "../pages/Register";
+import { Register } from "../pages/Register/Register";
 
-import { SearchBooks } from "../pages/SearchBooks";
-import { SearchBooksResults } from "../pages/SearchBooksResults";
+// import { SearchBooks } from "../pages/SearchBooks";
+import { SearchBooksResults } from "../pages/SearchBooksResults/SearchBooksResults";
 import { routers } from "../routes/routers";
 
 export const AppRouter = () => {
@@ -19,22 +19,16 @@ export const AppRouter = () => {
     <Routes>
       <Route path="/" element={<MainTemplate />}>
         <Route index element={<NewBooks />} />
-        <Route path="/search" element={<SearchBooks />} />
-        <Route
-          path="/search/:title/:page"
-          element={<SearchBooksResults />}
-        />
-        <Route path="/favorite" element={<Favorite />} />
-        <Route path="/books/:id" element={<DetailsBook />} />
-        <Route path="/cart" element={<Cart />} />
-
+        {/* <Route path={routers.SEARCH} element={<SearchBooks />} /> */}
+        <Route path={routers.SEARCH_RESULTS} element={<SearchBooksResults />} />
+        <Route path={routers.FAVORITE} element={<Favorite />} />
+        <Route path={routers.DETAILS_BOOK} element={<DetailsBook />} />
+        <Route path={routers.CART} element={<Cart />} />
+        <Route path={routers.ACCOUNT} element={<Account />} />
+        <Route path={routers.SIGN_IN} element={<Login />} />
+        <Route path={routers.SIGN_UP} element={<Register />} />
+        {/* <Route path={routers.NOT_FOUND} element={<NotFound />} /> */}
       </Route>
-
-      <Route path={routers.ACCOUNT} element={<Account />} />
-      <Route path={routers.SIGN_IN} element={<Login />} />
-      <Route path={routers.SIGN_UP} element={<Register />} />
-      {/* <Route path={routers.NOT_FOUND} element={<NotFound />} /> */}
-
     </Routes >
   );
 };
