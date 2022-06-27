@@ -1,6 +1,6 @@
 # **Bookstore**
 
-[Live Demo] (https://kristina-kerdyanova.github.io/bookstore/)
+[Live Demo](https://kristina-kerdyanova.github.io/bookstore/)
 
 ## Tools and Pachages
 
@@ -14,4 +14,3 @@
 8. [React Slick](https://styled-components.com/)
 9. [React Tabs](https://www.typescriptlang.org/)
 10. [React Hook Form](https://react-hook-form.com/)
-11. [gh-pages](https://www.npmjs.com/package/gh-pages)
