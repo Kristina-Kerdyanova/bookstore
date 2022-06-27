@@ -3,7 +3,6 @@ import { IBook, IFavorite } from "../../types";
 
 
 const initialState: IFavorite = {
-  sortMode: "asc",
   favorites: [],
 };
 

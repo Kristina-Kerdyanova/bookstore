@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./slices/cartReducer";
+import detailsBookReducer from "./slices/detailsBookReducer";
 import favoriteReducer from "./slices/favoriteReducer";
 import newBooksReducer from "./slices/newBooksReducer";
 import searchReducer from "./slices/searchReducer";
@@ -11,7 +12,7 @@ export const store = configureStore({
     reducer: {
         newBooks: newBooksReducer,
         search: searchReducer,
-        // detailsBook: detailsBookReducer,
+        detailsBook: detailsBookReducer,
         favorite: favoriteReducer,
         cart: cartReducer,
         user: userReducer,

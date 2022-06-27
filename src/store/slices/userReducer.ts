@@ -3,11 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 interface IUserStore {
   isAuth: boolean;
   email: string | null;
+  name: string | undefined;
 }
 
 const initialState: IUserStore = {
   isAuth: false,
   email: null,
+  name: undefined,
 };
 
 const userSlice = createSlice({
@@ -23,8 +25,12 @@ const userSlice = createSlice({
       state.isAuth = false;
       state.email = null;
     },
-  },
-});
 
-export const { setUser, unsetUser} = userSlice.actions;
+    setUserName: (state, action) => {
+      state.name = action.payload;
+    }
+  },
+})
+
+export const { setUser, unsetUser, setUserName} = userSlice.actions;
 export default userSlice.reducer;
