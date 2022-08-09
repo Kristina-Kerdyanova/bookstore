@@ -7,5 +7,6 @@ import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as Cancel } from "./cancel.svg";
 import { ReactComponent as RedLike } from "./red_like.svg";
 import { ReactComponent as BlackStar } from "./black_star.svg";
+import { ReactComponent as GreyStar } from "./grey_star.svg";
 
-export { Logo, Like, Cart, User, Search, Back, Cancel, RedLike, BlackStar };
+export { Logo, Like, Cart, User, Search, Back, Cancel, RedLike, BlackStar, GreyStar };
