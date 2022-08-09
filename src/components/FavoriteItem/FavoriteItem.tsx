@@ -3,16 +3,15 @@ import { useAppDispatch } from "../../store/hooks/hooks";
 import { removeFavorite } from "../../store/slices/favoriteReducer";
 import { StyledSubtitle } from "../../styles";
 import { IBook } from "../../types";
+import { ButtonContainer, StyledImage, StyledPrice } from "../BookItem/styles";
 import {
-  ButtonContainer,
-  StyledBookItem,
-  StyledImage,
-  StyledPrice,
-  StyledText,
-} from "../BookItem/styles";
-import { StyledContainerText } from "../CartItem/styles";
+  StyledContainerText,
+  StyledFavoriteItem,
+  StyledTextSubtitle,
+} from "../CartItem/styles";
 import { StyledLink } from "../Header/styled";
-import { RemoveButton } from "./styles";
+import { Rating } from "../Rating/Rating";
+import { RemoveButton, StyledConteinerContent } from "./styles";
 
 export interface IBookItem {
   book: IBook;
@@ -26,23 +25,27 @@ export const FavoriteItem = ({ book }: IBookItem) => {
   };
 
   return (
-    <StyledBookItem>
+    <StyledFavoriteItem whileHover={{ y: 10 }} key={book.isbn13}>
       <StyledLink to={`/books/${book.isbn13}`}>
         <StyledImage src={book.image} alt={book.title} />
-        </StyledLink>
-        <StyledContainerText>
+      </StyledLink>
+      <StyledContainerText>
         <StyledSubtitle>{book.title}</StyledSubtitle>
-        <StyledText>{book.subtitle ? book.subtitle : ""}</StyledText>
-        </StyledContainerText>
-      <StyledPrice>
-        {book.price === "$0.00" ? "Out of stock" : book.price}
-      </StyledPrice>
-      
+        <StyledTextSubtitle>
+          {book.subtitle ? book.subtitle : ""}
+        </StyledTextSubtitle>
+        <StyledConteinerContent>
+          <StyledPrice>
+            {book.price === "$0.00" ? "Out of stock" : book.price}
+          </StyledPrice>
+          <Rating />
+        </StyledConteinerContent>
+      </StyledContainerText>
       <ButtonContainer>
         <RemoveButton onClick={() => handleRemoveFavorite(book)}>
           <RedLike />
         </RemoveButton>
       </ButtonContainer>
-    </StyledBookItem>
+    </StyledFavoriteItem>
   );
 };

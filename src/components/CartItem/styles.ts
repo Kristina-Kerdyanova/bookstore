@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { typography } from "../../ui/typography";
 
 const StyledLinkItem = styled(Link)`
   text-decoration: none;
@@ -31,9 +32,34 @@ const CancelButton = styled.button`
 `;
 
 const StyledContainerText = styled.div`
+  max-width: 446px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
+  margin: 3rem 0;
 `;
 
-export { StyledLinkItem, CancelButton, StyledContainerText };
+const StyledFavoriteItem = styled(motion.div)`
+  display: flex;
+  margin: 2rem 0;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 2px rgba(80, 34, 34, 0.2);
+  font: inherit;
+  vertical-align: baseline;
+`;
+
+const StyledTextSubtitle = styled.p`
+  ${typography.textGrey};
+  justify-content: space-between;
+`;
+
+export {
+  StyledLinkItem,
+  CancelButton,
+  StyledContainerText,
+  StyledFavoriteItem,
+  StyledTextSubtitle,
+};
