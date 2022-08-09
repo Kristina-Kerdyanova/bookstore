@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { typography } from "./ui/typography";
 
 const StyledApp = styled.div`
-  padding: 0px 16px;
+  
   max-width: 1120px;
   width: 100%;
   margin: 0px auto;
@@ -15,6 +15,7 @@ const StyledTitle = styled.h1`
 
 const StyledSubtitle = styled.h1`
   ${typography.H2};
+  margin-bottom: 1rem;
 `;
 
 const StyledTextBlack = styled.p`
