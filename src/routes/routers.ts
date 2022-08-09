@@ -9,4 +9,4 @@ export enum routers {
   SIGN_IN = "/sign-in",
   SIGN_UP = "/sign-up",
   NOT_FOUND = "*",
-};
+}

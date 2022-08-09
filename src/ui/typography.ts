@@ -25,16 +25,11 @@ const H2 = css`
 const textGrey = css`
   width: 226px;
   height: 24px;
-
   font-family: "Helios";
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-
   color: #a8a8a8;
-
-  flex: none;
-  order: 1;
   flex-grow: 0;
 `;
 
@@ -43,7 +38,6 @@ const textBlack = css`
   font-style: normal;
   font-size: 16px;
   line-height: 24px;
-
   color: #313037;
 `;
 
