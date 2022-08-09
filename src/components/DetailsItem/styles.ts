@@ -60,7 +60,14 @@ const SubtitleDetails = styled.h2`
   margin-bottom: 20px;
 `;
 
+const StyledDetailsContainer = styled.div`
+display: flex;
+flex-direction: column;
+
+`
+
 export {
+  StyledDetailsContainer,
   ImageDetails,
   ContainerDetails,
   ContainerLeft,
