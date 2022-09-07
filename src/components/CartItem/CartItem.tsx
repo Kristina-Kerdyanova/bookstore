@@ -4,10 +4,7 @@ import { deleteBook } from "../../store/slices/cartReducer";
 import { StyledSubtitle } from "../../styles";
 import { IBook } from "../../types";
 import {
-  StyledBookItem,
   StyledImage,
-  StyledText,
-  StyledPrice,
   ButtonContainer,
   StyledBigPrice,
 } from "../BookItem/styles";

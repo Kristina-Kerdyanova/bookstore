@@ -1,4 +1,3 @@
-import { BlackStar } from "../../assets";
 import { useAppSelector } from "../../store/hooks/hooks";
 import { getBookDetails } from "../../store/selectors/detailsBookSelector";
 import { StyledTitle } from "../../styles";

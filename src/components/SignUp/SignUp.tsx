@@ -1,7 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { routers } from "../../routes/routers";
 import { setUser, setUserName } from "../../store/slices/userReducer";
 import { StyledLink } from "../Header/styled";

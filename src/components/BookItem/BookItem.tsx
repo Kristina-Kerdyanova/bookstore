@@ -1,13 +1,9 @@
 import { Cart, Like } from "../../assets";
-import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
-import { getNewBooks } from "../../store/selectors/booksSelector";
-import { getBookDetails } from "../../store/selectors/detailsBookSelector";
+import { useAppDispatch } from "../../store/hooks/hooks";
 import { addBook } from "../../store/slices/cartReducer";
 import { addFavorite } from "../../store/slices/favoriteReducer";
-import { StyledSubtitle } from "../../styles";
-import { IBook, IBookDetails } from "../../types";
+import { IBook } from "../../types";
 import {
-  ButtonContainer,
   StyledBookItem,
   StyledButton,
   StyledButtonCart,

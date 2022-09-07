@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../../ui/colors";
 import { typography } from "../../ui/typography";
 
 const StyledSubcribe = styled.div`

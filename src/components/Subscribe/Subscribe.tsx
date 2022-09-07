@@ -1,4 +1,3 @@
-import React from "react";
 import { StyledTextBlack } from "../../styles";
 import {
   StyledSubcribe,

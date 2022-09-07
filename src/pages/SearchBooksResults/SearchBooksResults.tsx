@@ -9,7 +9,6 @@ import {
   getSearchStatus,
 } from "../../store/selectors/searchSelector";
 import { fetchBooksBySearch } from "../../store/slices/searchReducer";
-import { StyledSubtitle } from "../../styles";
 import { IBook } from "../../types";
 import {
   StyledSearchBooks,
@@ -20,7 +19,7 @@ import {
 
 export const SearchBooksResults = () => {
   const { title = "", page = "" } = useParams();
-  const { books, total } = useAppSelector(getSearch);
+  const { books } = useAppSelector(getSearch);
   const status = useAppSelector(getSearchStatus);
   const error = useAppSelector(getSearchError);
 
