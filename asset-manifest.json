@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/bookstore/static/js/main.c5d0b3ff.js",
+    "static/media/logo.svg": "/bookstore/static/media/logo.4df062493d3c8a2d9a244c508c206884.svg",
+    "static/media/back.svg": "/bookstore/static/media/back.2b87dc7cfea8dcc8ea4171d750801129.svg",
+    "static/media/black_star.svg": "/bookstore/static/media/black_star.aaee2df6ece0e67bf59ae8d258b4bf34.svg",
+    "static/media/grey_star.svg": "/bookstore/static/media/grey_star.9b94ff9b744ee12b17cb14362458883f.svg",
+    "static/media/like.svg": "/bookstore/static/media/like.28220c581538742fc7469c10d8a9e269.svg",
+    "static/media/red_like.svg": "/bookstore/static/media/red_like.1de1fd7aa367763aa05f82009fc50a30.svg",
+    "static/media/cancel.svg": "/bookstore/static/media/cancel.addfabcd3761337320cfac3cfd1997d2.svg",
+    "static/media/cart.svg": "/bookstore/static/media/cart.291776166f59fef865d350aaa5d72385.svg",
+    "static/media/user.svg": "/bookstore/static/media/user.f95ce053779a6201d74bbfa54c39de4c.svg",
+    "static/media/search.svg": "/bookstore/static/media/search.4346c1226b0df7d82eb406591abb8fcc.svg",
+    "index.html": "/bookstore/index.html",
+    "main.c5d0b3ff.js.map": "/bookstore/static/js/main.c5d0b3ff.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c5d0b3ff.js"
+  ]
+}
