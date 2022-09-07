@@ -3,18 +3,15 @@ import { StyledSignUp } from "./styles";
 import styled from "styled-components";
 import { StyledTitle } from "../../styles";
 
-export const Register = () => {  
+export const Register = () => {
   return (
     <StyledRegister>
-    <StyledSignUp>
-      <StyledTitle>Sign Up</StyledTitle>
-      <SignUp />
-    </StyledSignUp>
+      <StyledSignUp>
+        <StyledTitle>Sign Up</StyledTitle>
+        <SignUp />
+      </StyledSignUp>
     </StyledRegister>
   );
 };
 
-
-const StyledRegister = styled.div`
-  
-`
+const StyledRegister = styled.div``;
