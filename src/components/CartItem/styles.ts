@@ -21,7 +21,6 @@ const StyledLinkItem = styled(Link)`
 
 const CancelButton = styled.button`
   max-width: 12px;
-  height: 12px;
   width: 100%;
   margin: 0 10px;
   background: none;
@@ -37,23 +36,36 @@ const StyledContainerText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 3rem 0;
+  margin: 3rem 1rem;
+
+  @media (max-width: 800px) {
+  }
 `;
 
 const StyledFavoriteItem = styled(motion.div)`
   display: flex;
   margin: 2rem 0;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: 0px 5px 10px 2px rgba(80, 34, 34, 0.2);
   font: inherit;
   vertical-align: baseline;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const StyledTextSubtitle = styled.p`
   ${typography.textGrey};
   justify-content: space-between;
+  height: 100%;
+`;
+
+const ContainerContent = styled.div`
+  display: flex;
 `;
 
 export {
@@ -62,4 +74,5 @@ export {
   StyledContainerText,
   StyledFavoriteItem,
   StyledTextSubtitle,
+  ContainerContent,
 };

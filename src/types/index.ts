@@ -69,4 +69,3 @@ export interface IArguments {
 export interface ICartItem extends IBookDetailsApi {
   amount: number;
 }
-

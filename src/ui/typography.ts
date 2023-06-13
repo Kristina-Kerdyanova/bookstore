@@ -6,10 +6,15 @@ const H1 = css`
   font-size: 56px;
   line-height: 64px;
   text-transform: uppercase;
-
   align-items: center;
-
   color: #313037;
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+    text-align: center;
+    line-height: 40px;
+    margin: 35px 0;
+  }
 `;
 
 const H2 = css`
@@ -18,19 +23,15 @@ const H2 = css`
   font-size: 24px;
   line-height: 32px;
   text-transform: uppercase;
-
   color: #313037;
 `;
 
 const textGrey = css`
   width: 226px;
   height: 24px;
-  font-family: "Helios";
-  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #a8a8a8;
-  flex-grow: 0;
 `;
 
 const textBlack = css`

@@ -2,22 +2,34 @@ import styled from "styled-components";
 import { typography } from "../../ui/typography";
 
 const StyledDetails = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 128px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 25px;
   margin-bottom: 72px;
 `;
 
 const ImageContainer = styled.div`
+  width: 45%;
   background: rgba(80, 34, 34, 0.1);
   text-align: center;
+
+  @media (max-width: 768px) {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
 `;
 
 const ImageDetails = styled.img``;
 
 const ContainerDetails = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: 45%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: auto;
+  }
 `;
 
 const ContainerLeft = styled.div``;
@@ -61,10 +73,36 @@ const SubtitleDetails = styled.h2`
 `;
 
 const StyledDetailsContainer = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+`;
 
-`
+const ContainerContentDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin: auto;
+  }
+`;
+
+const ContainerDescription = styled.div`
+  margin-bottom: 50px;
+`;
+
+const TitleDescription = styled.p`
+  font-size: 23px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+const TextDescription = styled.p`
+  font-size: 19px;
+  line-height: 25px;
+`;
 
 export {
   StyledDetailsContainer,
@@ -78,4 +116,8 @@ export {
   ImageContainer,
   TextSubtitle,
   SubtitleDetails,
+  ContainerContentDetails,
+  ContainerDescription,
+  TitleDescription,
+  TextDescription,
 };

@@ -1,27 +1,16 @@
 import styled from "styled-components";
-import { typography } from "../../ui/typography";
-import { colors } from "../../ui/colors";
 
 const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin: 35px auto;
-  border-top: 1px ${colors.secondary} solid;
+  padding: 24px 0;
+  margin-top: 50px;
+  border-top: solid 1px #a8a8a8 ;
 `;
 
-const ContentRight = styled.p`
-  ${typography.textGrey};
-  display: flex;
-  justify-content: right;
+const FooterText = styled.p`
+  color: #a8a8a8;
 `;
 
-const ContentLeft = styled.p`
-${typography.textGrey};
-  display: flex;
-  justify-content: left;
-`
-
-export { StyledFooter, ContentRight, ContentLeft };
-
+export { StyledFooter, FooterText };

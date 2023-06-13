@@ -2,10 +2,8 @@ import styled from "styled-components";
 
 const StyledMainTemplate = styled.div`
   display: flex;
-  padding: 0px 16px;
-  max-width: 1120px;
-  width: 100%;
   margin: 0px auto;
+  padding: 0 16px;
 `;
 
 const Container = styled.div`
@@ -13,7 +11,7 @@ const Container = styled.div`
   max-width: 1120px;
   width: 100%;
   flex-direction: column;
-  margin: 14px;
+  margin: auto;
 `;
 
 export { StyledMainTemplate, Container };

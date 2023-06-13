@@ -17,7 +17,6 @@ const StyledBookItem = styled(motion.div)`
 const StyledButtonFavorite = styled.button`
   max-width: 24px;
   width: 100%;
-  
   background: none;
   border: none;
   cursor: pointer;
@@ -48,7 +47,6 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 3rem;
 `;
 
 const StyledText = styled.p`
@@ -59,10 +57,11 @@ const StyledText = styled.p`
 const StyledPrice = styled.p`
   ${typography.H2};
   font-size: 20px;
+  /* margin: auto; */
 `;
 
 const StyledBigPrice = styled.p`
-text-align: center;
+  text-align: center;
   width: 100%;
   max-width: 87px;
   ${typography.H2};

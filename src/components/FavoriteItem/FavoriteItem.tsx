@@ -3,14 +3,14 @@ import { useAppDispatch } from "../../store/hooks/hooks";
 import { removeFavorite } from "../../store/slices/favoriteReducer";
 import { StyledSubtitle } from "../../styles";
 import { IBook } from "../../types";
-import { ButtonContainer, StyledImage, StyledPrice } from "../BookItem/styles";
+import { StyledBigPrice, StyledImage} from "../BookItem/styles";
 import {
+  ContainerContent,
   StyledContainerText,
   StyledFavoriteItem,
   StyledTextSubtitle,
 } from "../CartItem/styles";
 import { StyledLink } from "../Header/styled";
-import { Rating } from "../Rating/Rating";
 import { RemoveButton, StyledConteinerContent } from "./styles";
 
 export interface IBookItem {
@@ -34,18 +34,18 @@ export const FavoriteItem = ({ book }: IBookItem) => {
         <StyledTextSubtitle>
           {book.subtitle ? book.subtitle : ""}
         </StyledTextSubtitle>
-        <StyledConteinerContent>
-          <StyledPrice>
-            {book.price === "$0.00" ? "Out of stock" : book.price}
-          </StyledPrice>
-          <Rating />
-        </StyledConteinerContent>
       </StyledContainerText>
-      <ButtonContainer>
-        <RemoveButton onClick={() => handleRemoveFavorite(book)}>
-          <RedLike />
-        </RemoveButton>
-      </ButtonContainer>
+      <ContainerContent>
+        <StyledConteinerContent>
+          <StyledBigPrice>
+            {book.price === "$0.00" ? "Out of stock" : book.price}
+          </StyledBigPrice>
+          {/* <Rating /> */}
+        </StyledConteinerContent>
+          <RemoveButton onClick={() => handleRemoveFavorite(book)}>
+            <RedLike />
+          </RemoveButton>
+      </ContainerContent>
     </StyledFavoriteItem>
   );
 };

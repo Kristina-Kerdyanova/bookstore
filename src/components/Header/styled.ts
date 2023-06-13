@@ -3,9 +3,14 @@ import styled from "styled-components";
 
 const StyledHeader = styled.header`
   display: flex;
-
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin: 24px 0;
+  column-gap: 15px;
+
+  @media (max-width: 470px) {
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
 `;
 
 const StyledLink = styled(Link)`

@@ -7,16 +7,16 @@ const StyledSubcribe = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(80, 34, 34, 0.1);
-  height: 288px;
+  min-height: 288px;
   max-width: 1120px;
-  width: 100%;
+  /* width: 100%; */
+  padding: 0 15px;
 `;
 
 const StyledSubscribeContainer = styled.div`
-  height: 176px;
+  min-height: 176px;
   max-width: 992px;
   width: 100%;
-  pad: 56px 64px;
 `;
 
 const StyledSubtitleSubscribe = styled.h2`
@@ -25,6 +25,7 @@ const StyledSubtitleSubscribe = styled.h2`
   justify-content: flex-start;
   margin-bottom: 10px;
 `;
+
 const StyledForm = styled.form`
   display: flex;
   justify-content: space-between;
@@ -32,9 +33,8 @@ const StyledForm = styled.form`
 `;
 
 const StyledInput = styled.input`
-  
   width: 80%;
-  height: 56px;
+  min-height: 56px;
   border-radius: 0.5px;
   display: grid;
   padding-left: 15px;
@@ -45,7 +45,7 @@ const StyledInput = styled.input`
 
 const SubscribeButton = styled.button`
   width: 20%;
-  height: 56px;
+  min-height: 56px;
   border: none;
   cursor: pointer;
   font-family: Bebas Neue;
@@ -58,6 +58,11 @@ const SubscribeButton = styled.button`
   color: rgb(255, 255, 255);
   border-radius: 5px;
   box-shadow: 5px 5px 5px -5px rgba(255, 255, 255, 0.2);
+  overflow-wrap: anywhere;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export {

@@ -2,7 +2,11 @@ import { BookItem } from "../BookItem/BookItem";
 import { StyledBookList } from "./styles";
 
 import { IBook } from "../../types";
-import { getNewBooks, getNewBooksError, getNewBooksStatus } from "../../store/selectors/booksSelector";
+import {
+  getNewBooks,
+  getNewBooksError,
+  getNewBooksStatus,
+} from "../../store/selectors/booksSelector";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { useEffect } from "react";
 import { fetchNewBooks } from "../../store/slices/newBooksReducer";
@@ -19,17 +23,19 @@ export const BookList = () => {
     }
   }, [dispatch, status]);
 
-  if (status === 'loading') {
-    return <div>Loading...</div>
-  };
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
 
-  if (status === 'error') {
-    return <div>
-      <h1>WE HAVE SOME PROBLEMS</h1>
-      <h2>{error.message}</h2>
-      <i>{error.code}</i>
-    </div>
-  };
+  if (status === "error") {
+    return (
+      <div>
+        <h1>WE HAVE SOME PROBLEMS</h1>
+        <h2>{error.message}</h2>
+        <i>{error.code}</i>
+      </div>
+    );
+  }
   return (
     <StyledBookList>
       {books.map((book: IBook) => {

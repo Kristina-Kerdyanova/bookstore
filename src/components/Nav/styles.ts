@@ -4,7 +4,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 184px;
+  max-width: 135px;
   width: 100%;
 `;
 

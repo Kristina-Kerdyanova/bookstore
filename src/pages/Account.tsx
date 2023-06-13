@@ -13,13 +13,14 @@ export const Account = () => {
   const { favorites } = useAppSelector(getFavorite);
   const { book } = useAppSelector(getCart);
 
-
   if (isAuth) {
     return (
       <>
         <StyledTitle>Welcome to BOOKSTORE!</StyledTitle>
         <StyledLink to={`/favorite`}>
-          <StyledSubtitle>YOUR FAVORITES BOOKS: {favorites.length}</StyledSubtitle>
+          <StyledSubtitle>
+            YOUR FAVORITES BOOKS: {favorites.length}
+          </StyledSubtitle>
         </StyledLink>
         <StyledLink to={`/cart`}>
           <StyledSubtitle>YOUR CART: {book.length}</StyledSubtitle>

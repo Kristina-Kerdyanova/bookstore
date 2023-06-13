@@ -1,10 +1,10 @@
-import { ContentLeft, ContentRight, StyledFooter } from './styled'
+import { FooterText, StyledFooter } from "./styled";
 
 export const Footer = () => {
-    return (
-        <StyledFooter>
-            <ContentLeft> ©2022 Bookstore </ContentLeft>
-            <ContentRight> All rights reserved </ContentRight>
-        </StyledFooter>
-    )
-}
+  return (
+    <StyledFooter>
+      <FooterText>©2022 Bookstore</FooterText>
+      <FooterText>All rights reserved</FooterText>
+    </StyledFooter>
+  );
+};

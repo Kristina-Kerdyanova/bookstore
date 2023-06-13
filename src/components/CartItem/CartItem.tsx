@@ -12,6 +12,7 @@ import { IBookItem } from "../FavoriteItem/FavoriteItem";
 import { StyledLink } from "../Header/styled";
 import {
   CancelButton,
+  ContainerContent,
   StyledContainerText,
   StyledFavoriteItem,
   StyledTextSubtitle,
@@ -44,11 +45,10 @@ export const CartItem = ({ book }: IBookItem) => {
           {book.subtitle ? book.subtitle : ""}
         </StyledTextSubtitle>
       </StyledContainerText>
-
+      <ContainerContent>
       <StyledBigPrice>
         {book.price === "$0.00" ? "Out of stock" : book.price}
       </StyledBigPrice>
-
       <ButtonContainer>
         <CancelButton onClick={() => handleDeleteBook(book)}>
           <Cancel />
@@ -57,6 +57,7 @@ export const CartItem = ({ book }: IBookItem) => {
         <p>{book.amount}</p>
         <button onClick={() => handlePlus(book)}>+</button> */}
       </ButtonContainer>
+      </ContainerContent>
     </StyledFavoriteItem>
   );
 };

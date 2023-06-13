@@ -4,17 +4,18 @@ import { StyledTitle } from "../../styles";
 import { Rating } from "../Rating/Rating";
 
 import {
+  ContainerContentDetails,
+  ContainerDescription,
   ContainerDetails,
-  ContainerLeft,
-  ContainerRight,
   ContentDetails,
   ImageContainer,
   ImageDetails,
   StyledDetails,
   StyledDetailsContainer,
   SubtitleDetails,
+  TextDescription,
   TextDetails,
-  TextSubtitle,
+  TitleDescription,
 } from "./styles";
 
 export const DetailsItem = () => {
@@ -28,27 +29,48 @@ export const DetailsItem = () => {
           <ImageDetails src={details.image} alt={details.title} />
         </ImageContainer>
         <ContainerDetails>
-          <ContainerLeft>
-            <TextDetails>Authors</TextDetails>
-            <TextDetails>Publisher</TextDetails>
-            <TextDetails>Pages</TextDetails>
-            <TextDetails>Raiting</TextDetails>
-            <TextSubtitle>Price</TextSubtitle>
-          </ContainerLeft>
-          <ContainerRight>
-            <ContentDetails>{details.authors}</ContentDetails>
-            <ContentDetails>{details.publisher}</ContentDetails>
-            <ContentDetails>{details.pages}</ContentDetails>
-            <ContentDetails>
-              <Rating/>
-            </ContentDetails>
+          <ContainerContentDetails>
             <SubtitleDetails>
               {details.price === "$0.00" ? "Out of stock" : details.price}
             </SubtitleDetails>
-          </ContainerRight>
+            <ContentDetails>
+              <Rating />
+            </ContentDetails>
+          </ContainerContentDetails>
+          <ContainerContentDetails>
+            <TextDetails>Authors</TextDetails>
+            <ContentDetails>{details.authors}</ContentDetails>
+          </ContainerContentDetails>
+          <ContainerContentDetails>
+            <TextDetails>Publisher</TextDetails>
+            <ContentDetails>{details.publisher}</ContentDetails>
+          </ContainerContentDetails>
+          <ContainerContentDetails>
+            <TextDetails>Language</TextDetails>
+            <ContentDetails>{details.language}</ContentDetails>
+          </ContainerContentDetails>
+          <ContainerContentDetails>
+            <TextDetails>Pages</TextDetails>
+            <ContentDetails>{details.pages}</ContentDetails>
+          </ContainerContentDetails>
+          <ContainerContentDetails>
+            <TextDetails>Published</TextDetails>
+            <ContentDetails>{details.year}</ContentDetails>
+          </ContainerContentDetails>
+          <ContainerContentDetails>
+            <TextDetails>ISBN10</TextDetails>
+            <ContentDetails>{details.isbn10}</ContentDetails>
+          </ContainerContentDetails>
+          <ContainerContentDetails>
+            <TextDetails>ISBN13</TextDetails>
+            <ContentDetails>{details.isbn13}</ContentDetails>
+          </ContainerContentDetails>
         </ContainerDetails>
       </StyledDetails>
-      <ContentDetails></ContentDetails>
+      <ContainerDescription>
+        <TitleDescription>Description</TitleDescription>
+        <TextDescription>{details.desc}</TextDescription>
+      </ContainerDescription>
     </StyledDetailsContainer>
   );
 };

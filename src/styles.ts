@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { typography } from "./ui/typography";
 
 const StyledApp = styled.div`
-  
-  max-width: 1120px;
+  max-width: 1280px;
   width: 100%;
   margin: 0px auto;
 `;
+
 
 const StyledTitle = styled.h1`
   ${typography.H1};

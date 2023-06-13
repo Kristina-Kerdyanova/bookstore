@@ -6,15 +6,13 @@ const StyledConteinerContent = styled.div`
 `;
 
 const RemoveButton = styled.button`
-  max-width: 12px;
-  height: 12px;
-  width: 100%;
-  margin: 0 10px;
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
   text-align: center;
-  margin: 10px 20px;
+  margin: 0 20px;
 `;
 
 export { RemoveButton, StyledConteinerContent };
